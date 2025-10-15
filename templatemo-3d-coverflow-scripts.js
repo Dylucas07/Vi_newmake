@@ -61,7 +61,7 @@ https://templatemo.com/tm-595-3d-coverflow
             },
             {
                 title: "VL - Beauty Studio",
-                description: "Realçamos o que já é lindo: VOC."
+                description: "Realçamos o que já é lindo:VOCÊ."
             },
             {
                 title: "VL - Beauty Studio",
@@ -381,3 +381,17 @@ https://templatemo.com/tm-595-3d-coverflow
         updateCoverflow();
         container.focus();
         startAutoplay();
+
+        // Zoom ao clicar na imagem
+document.querySelectorAll('.coverflow-item img').forEach(img => {
+  img.addEventListener('click', function() {
+    const modal = document.getElementById("zoomModal");
+    const modalImg = document.getElementById("zoomImage");
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  });
+});
+
+function closeZoom() {
+  document.getElementById("zoomModal").style.display = "none";
+}
