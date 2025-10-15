@@ -382,16 +382,15 @@ https://templatemo.com/tm-595-3d-coverflow
         container.focus();
         startAutoplay();
 
-        // Zoom ao clicar na imagem
-document.querySelectorAll('.coverflow-item img').forEach(img => {
-  img.addEventListener('click', function() {
+        document.querySelectorAll('.coverflow-item img').forEach(img => {
+  img.addEventListener('click', function () {
     const modal = document.getElementById("zoomModal");
     const modalImg = document.getElementById("zoomImage");
-    modal.style.display = "block";
+    modal.classList.add("show");
     modalImg.src = this.src;
   });
 });
 
 function closeZoom() {
-  document.getElementById("zoomModal").style.display = "none";
+  document.getElementById("zoomModal").classList.remove("show");
 }
